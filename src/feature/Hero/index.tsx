@@ -1,7 +1,7 @@
 'use client'
 
+import ButtonSocial from "@/component/ButtonSocial"
 import classMerge from "@/lib/utils/classMerge"
-import NextLink from 'next/link'
 
 export default function Hero() {
   return (
@@ -47,16 +47,8 @@ export default function Hero() {
           data-aos="fade-up"
           data-aos-delay={700}
           className="flex flex-col gap-3 pb-20">
-            <button className="shadow-btn-green-main-boxShadow w-fit">
-              <NextLink href="#">
-                <img src="/assets/hero/btn-google.png" alt="logo google" />
-              </NextLink>
-            </button>
-            <button className="shadow-btn-green-main-boxShadow w-fit">
-              <NextLink href="#">
-                <img src="/assets/hero/btn-apple.png" alt="" />
-              </NextLink>
-            </button>
+            <ButtonSocial src="/assets/hero/btn-google.png" alt="google" href="#"/>
+            <ButtonSocial src="/assets/hero/btn-apple.png" alt="apple" href="#"/>
           </div>
         </div>
         <div
