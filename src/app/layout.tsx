@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'], weight: ['300','400', '500', '600', '7
 export const metadata: Metadata = {
   title: getPageTitle(),
   description: '',
-  icons: '/assets/favicon.ico',
+  icons: '/assets/favicon.png',
   keywords: ['template', 'api', 'route'],
   metadataBase: new URL(String(process.env.NEXT_PUBLIC_SITE_URL)),
   openGraph: {
@@ -39,7 +39,9 @@ export default function RootLayout({
       <body className={`${inter.className} bg-white-main-light`}>
         <Providers>
           <Header/>
-            {children}
+            <main>
+             {children}
+            </main>
         </Providers>
         </body>
     </html>

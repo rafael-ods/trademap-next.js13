@@ -21,10 +21,11 @@ const config: Config = {
       },
       backgroundImage: {
         'green-main-gradient': 'linear-gradient(184deg, #00FFC4  0%, #02C989 100%);',
-        'green-main-gradient-hover': 'linear-gradient(180deg, #2FFDCE 0%, #00FFC4  100%)'
+        'green-main-gradient-hover': 'linear-gradient(180deg, #2FFDCE 0%, #00FFC4  100%)',
       },
       boxShadow: {
         'green-main-boxShadow': '5px 5px 19px 0px rgba(0, 254.2159194946289, 172.29911446264663, 0.18)',
+        'btn-green-main-boxShadow': '6px -6px 13px 0px rgba(16.844670113496253, 92.58907909998238, 95.79545974731445, 0.18)',
       },
       container: {
         center: true,
