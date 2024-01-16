@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
-import CardInformationSteps from "@/component/CardInformationSteps"
-import classMerge from "@/lib/utils/classMerge"
+import CardInformationSteps from '@/component/CardInformationSteps'
+import classMerge from '@/lib/utils/classMerge'
 
 export default function CtaInformation() {
-
   const listInformationSteps = [
     {
       id: 0,
@@ -30,25 +30,26 @@ export default function CtaInformation() {
       alt: 'icon user',
       title: 'Participe de comunidades exclusivas de investidores​',
     },
-
   ]
 
   return (
     <section className="container py-14 grid md:grid-cols-12 relative">
       <img
-      className={classMerge([
-        'absolute',
-        'hidden ',
-        'lg:block ',
-        'opacity-[0.31] ',
-        'w-[70px] ',
-        'h-auto ',
-        'right-[50px] ',
-        'bottom-[250px]',
-      ])}
+        className={classMerge([
+          'absolute',
+          'hidden ',
+          'lg:block ',
+          'opacity-[0.31] ',
+          'w-[70px] ',
+          'h-auto ',
+          'right-[50px] ',
+          'bottom-[250px]',
+        ])}
         src="/assets/cta-information/elemento-2.png"
+        alt="elemento2"
       />
-        <span className={classMerge([
+      <span
+        className={classMerge([
           'absolute ',
           'right-0',
           'top-[250px]',
@@ -56,34 +57,49 @@ export default function CtaInformation() {
           'w-2 ',
           'bg-green-main ',
           'rounded-full',
-        ])} />
-        <div
+        ])}
+      />
+      <div
         data-aos="fade-up"
-        className="hidden md:block md:col-span-5 relative">
-            <img className="absolute top-[100px] inset-0" src="/assets/cta-information/elemento.png" />
-            <img className="ml-8 z-10" src="/assets/cta-information/cel-broken.png" />
-        </div>
-        <div className="md:col-span-7 flex flex-col justify-center">
-         <h2
+        className="hidden md:block md:col-span-5 relative"
+      >
+        <img
+          className="absolute top-[100px] inset-0"
+          src="/assets/cta-information/elemento.png"
+          alt="elemento"
+        />
+        <img
+          className="ml-8 z-10"
+          src="/assets/cta-information/cel-broken.png"
+          alt="celular"
+        />
+      </div>
+      <div className="md:col-span-7 flex flex-col justify-center">
+        <h2
           data-aos="fade-up"
           data-aos-delay={400}
-          className="heading-secondary text-[#01E59B] mb-10">
-            Esteja sempre um passo
-            à frente com as melhores ferramentas</h2>
-            <ul className="grid md:grid-cols-2 gap-8">
-              {listInformationSteps.map((item, index) => {
-                return (
-                  <li key={item.id} data-aos="fade-up" data-aos-delay={(index + 1) * 100 + 500}>
-                    <CardInformationSteps
-                    alt={item.alt}
-                    src={item.src}
-                    title={item.title}
-                    />
-                  </li>
-                )
-              })}
-            </ul>
-        </div>
+          className="heading-secondary text-[#01E59B] mb-10"
+        >
+          Esteja sempre um passo à frente com as melhores ferramentas
+        </h2>
+        <ul className="grid md:grid-cols-2 gap-8">
+          {listInformationSteps.map((item, index) => {
+            return (
+              <li
+                key={item.id}
+                data-aos="fade-up"
+                data-aos-delay={(index + 1) * 100 + 500}
+              >
+                <CardInformationSteps
+                  alt={item.alt}
+                  src={item.src}
+                  title={item.title}
+                />
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </section>
   )
 }

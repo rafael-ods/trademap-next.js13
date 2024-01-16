@@ -9,23 +9,27 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors:  {
+      colors: {
         'green-main': '#00FFC4;',
         'green-main-hover': '#00AF78;',
-        'white-main' :'#F9FAFF',
-        'white-main-light' :'#FFF',
+        'white-main': '#F9FAFF',
+        'white-main-light': '#FFF',
         'gray-main': '#1A1B23',
         'gray-main-icon': '#C6C6C6',
         'background-main-icon': '#182530',
         'gray-main-light': '#23242F',
       },
       backgroundImage: {
-        'green-main-gradient': 'linear-gradient(184deg, #00FFC4  0%, #02C989 100%);',
-        'green-main-gradient-hover': 'linear-gradient(180deg, #2FFDCE 0%, #00FFC4  100%)',
+        'green-main-gradient':
+          'linear-gradient(184deg, #00FFC4  0%, #02C989 100%);',
+        'green-main-gradient-hover':
+          'linear-gradient(180deg, #2FFDCE 0%, #00FFC4  100%)',
       },
       boxShadow: {
-        'green-main-boxShadow': '5px 5px 19px 0px rgba(0, 254.2159194946289, 172.29911446264663, 0.18)',
-        'btn-green-main-boxShadow': '6px -6px 13px 0px rgba(16.844670113496253, 92.58907909998238, 95.79545974731445, 0.18)',
+        'green-main-boxShadow':
+          '5px 5px 19px 0px rgba(0, 254.2159194946289, 172.29911446264663, 0.18)',
+        'btn-green-main-boxShadow':
+          '6px -6px 13px 0px rgba(16.844670113496253, 92.58907909998238, 95.79545974731445, 0.18)',
       },
       container: {
         center: true,

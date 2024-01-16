@@ -5,7 +5,10 @@ import Providers from '../providers'
 import getPageTitle from '@/lib/utils/getPageTitle'
 import Header from '@/feature/Header'
 
-const inter = Inter({ subsets: ['latin'], weight: ['300','400', '500', '600', '700']})
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+})
 
 export const metadata: Metadata = {
   title: getPageTitle(),
@@ -38,12 +41,10 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${inter.className} bg-white-main-light`}>
         <Providers>
-          <Header/>
-            <main>
-             {children}
-            </main>
+          <Header />
+          <main>{children}</main>
         </Providers>
-        </body>
+      </body>
     </html>
   )
 }
