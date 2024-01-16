@@ -2,6 +2,7 @@ import CtaInformation from '@/feature/CtaInformation'
 import CtaInformationUsers from '@/feature/CtaInformationUsers'
 import CtaTrademapCarrousel from '@/feature/CtaTrademapCarrousel'
 import Hero from '@/feature/Hero'
+import HomeBroken from '@/feature/HomeBroken'
 import getPageTitle from '@/lib/utils/getPageTitle'
 import { Metadata } from 'next'
 
@@ -16,6 +17,7 @@ export default function Home() {
       <CtaInformation />
       <CtaTrademapCarrousel />
       <CtaInformationUsers />
+      <HomeBroken />
     </>
   )
 }
