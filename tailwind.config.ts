@@ -24,6 +24,7 @@ const config: Config = {
           'linear-gradient(184deg, #00FFC4  0%, #02C989 100%);',
         'green-main-gradient-hover':
           'linear-gradient(180deg, #2FFDCE 0%, #00FFC4  100%)',
+        'footer-background': 'url("/assets/footer/bg-footer.png")',
       },
       boxShadow: {
         'green-main-boxShadow':
@@ -53,6 +54,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }
 export default config

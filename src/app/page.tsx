@@ -1,6 +1,7 @@
 import CtaInformation from '@/feature/CtaInformation'
 import CtaInformationUsers from '@/feature/CtaInformationUsers'
 import CtaTrademapCarrousel from '@/feature/CtaTrademapCarrousel'
+import Footer from '@/feature/Footer'
 import Hero from '@/feature/Hero'
 import HomeBroken from '@/feature/HomeBroken'
 import News from '@/feature/News'
@@ -20,6 +21,7 @@ export default function Home() {
       <CtaInformationUsers />
       <HomeBroken />
       <News />
+      <Footer />
     </>
   )
 }
