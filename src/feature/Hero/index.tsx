@@ -6,7 +6,7 @@ import classMerge from '@/lib/utils/classMerge'
 
 export default function Hero() {
   return (
-    <section className="bg-gray-main pt-20">
+    <section className="bg-gray-main pt-10 lg:pt-20">
       <div
         className={classMerge([
           'grid',

@@ -6,9 +6,13 @@ import classMerge from '@/lib/utils/classMerge'
 import { usePathname } from 'next/navigation'
 import { FaBars } from 'react-icons/fa6'
 import Button from '@/component/Button'
+import { MdOutlineClose } from 'react-icons/md'
+import { HiDownload } from 'react-icons/hi'
+import { useState } from 'react'
 
 export default function Header() {
   const path = usePathname()
+  const [selected, setSelected] = useState(false)
 
   const linksheader = [
     {
@@ -32,6 +36,42 @@ export default function Header() {
       path: '#',
     },
   ]
+  const linksheaderMobile = [
+    {
+      id: 0,
+      title: 'Home',
+      path: '/',
+    },
+    {
+      id: 1,
+      title: 'Planos',
+      path: '#',
+    },
+    {
+      id: 2,
+      title: 'Notícias',
+      path: '#',
+    },
+    {
+      id: 3,
+      title: 'FAQ',
+      path: '#',
+    },
+    {
+      id: 4,
+      title: 'Ligas',
+      path: '#',
+      src: '/assets/header/shield-mobile.svg',
+      alt: 'icon shield',
+    },
+    {
+      id: 5,
+      title: 'EducaMap',
+      path: '#',
+      src: '/assets/header/flag.svg',
+      alt: 'icon flag',
+    },
+  ]
 
   return (
     <header className="bg-gray-main-light">
@@ -42,7 +82,7 @@ export default function Header() {
       </div>
       <div className="container py-3">
         <div className="flex items-center justify-between">
-          <div className="flex md:gap-6 lg:gap-9">
+          <nav className="flex md:gap-6 lg:gap-9">
             <img
               className="w-[97px] h-auto lg:w-[128px]"
               src="/assets/header/logo-trademap.svg"
@@ -74,11 +114,141 @@ export default function Header() {
                 )
               })}
             </ul>
-          </div>
+          </nav>
+          {/* MOBILE */}
+          <nav
+            className={classMerge([
+              {
+                'right-0': !!selected,
+                '-right-full': !selected,
+              },
+              ' md:hidden ',
+              'transition-all',
+              'duration-300',
+              'ease-in-out',
+              ' fixed ',
+              ' w-full ',
+              ' top-0 ',
+              ' h-full ',
+              ' z-[99999]',
+              'bg-header-bg',
+              'bg-cover',
+              'bg-right-bottom',
+            ])}
+          >
+            <div
+              className={classMerge([
+                'w-full',
+                'fixed',
+                'h-full',
+                'opacity-[0.94]',
+                'bg-header-bg-gradient',
+              ])}
+            >
+              <div className="container pt-[10px]">
+                <div className="flex items-center">
+                  <NextLink href="/login">
+                    <img
+                      className="w-[127.75px] h-auto lg:w-[128px]"
+                      src="/assets/header/logo-trademap.svg"
+                      alt="logo trademap"
+                    />
+                  </NextLink>
+                </div>
+                <ul className="mt-8 flex flex-col px-5 gap-4">
+                  {linksheaderMobile.map((item, index, array) => {
+                    return (
+                      <li
+                        key={item.id}
+                        className={classMerge([
+                          'flex ',
+                          'items-center ',
+                          'text-xl',
+                          'font-normal',
+                          'text-green-main',
+                          'last-of-type:flex ',
+                          'last-of-type:gap-2 ',
+                          'last-of-type:border-b ',
+                          'last-of-type:border-gray-main-icon ',
+                          'last-of-type:border-opacity-40 ',
+                          'last-of-type:pb-5 ',
+                          'last-of-type:w-[280px] ',
+                          index === array.length - 2
+                            ? 'flex gap-2 border-t border-gray-main-icon border-opacity-40 w-[280px] pt-5 '
+                            : '',
+                        ])}
+                      >
+                        <img src={item.src} alt={item.alt} />
+                        <NextLink href={item.path}>{item.title}</NextLink>
+                      </li>
+                    )
+                  })}
+                  <div className="mt-4 flex flex-col gap-7 w-[280px]">
+                    <Button colorMode="contrast">
+                      <NextLink
+                        href="#"
+                        className="flex items-center gap-16 uppercase text-green-main text-base font-light"
+                      >
+                        <img
+                          className="h-fit w-[20px]"
+                          src="/assets/header/login.svg"
+                          alt="login icon"
+                        />
+                        Trademap Web
+                      </NextLink>
+                    </Button>
+                    <Button colorMode="main">
+                      <NextLink
+                        href="#"
+                        className="flex items-center gap-12 uppercase text-base"
+                      >
+                        <HiDownload size={18} />
+                        Baixe o app grátis!
+                      </NextLink>
+                    </Button>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </nav>
 
           <div>
-            <FaBars className="text-green-main text-2xl block md:hidden" />
-            <div className="hidden md:flex items-center gap-2 lg:gap-8">
+            {selected ? (
+              <MdOutlineClose
+                className={classMerge([
+                  {
+                    fixed: !!selected,
+                    'z-[9999999]': !!selected,
+                    'right-5': !!selected,
+                    'top-7': !!selected,
+                  },
+                  ' text-white-main ',
+                  ' text-2xl ',
+                  ' block ',
+                  ' md:hidden',
+                ])}
+                onClick={() => setSelected((old) => !old)}
+                size={36}
+              />
+            ) : (
+              <FaBars
+                className={classMerge([
+                  {
+                    fixed: !!selected,
+                    'z-[9999999]': !!selected,
+                    'right-5': !!selected,
+                    'top-7': !!selected,
+                  },
+                  ' text-green-main ',
+                  ' text-2xl ',
+                  ' block ',
+                  ' md:hidden',
+                ])}
+                size={28}
+                onClick={() => setSelected((old) => !old)}
+              />
+            )}
+            <div className="hidden md:flex items-centerS gap-2 lg:gap-8">
               <Button colorMode="contrast">
                 <NextLink
                   href="#"

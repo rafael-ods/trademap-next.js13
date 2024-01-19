@@ -25,6 +25,9 @@ const config: Config = {
         'green-main-gradient-hover':
           'linear-gradient(180deg, #2FFDCE 0%, #00FFC4  100%)',
         'footer-background': 'url("/assets/footer/bg-footer.png")',
+        'header-bg-gradient':
+          'linear-gradient(180deg, #13141B 0%, #23242F 100%)',
+        'header-bg': 'url("/assets/header/header-bg-mobile.webp")',
       },
       boxShadow: {
         'green-main-boxShadow':
