@@ -23,7 +23,7 @@ export default function CtaTrademapCarrousel() {
     },
     {
       id: 2,
-      src: '/assets/cta-trademap-carrousel/liga-1.png',
+      src: '/assets/cta-trademap-carrousel/Liga.png',
       atl: 'imagem liga',
       title: 'Investir pode ser divertido',
       paragraph:

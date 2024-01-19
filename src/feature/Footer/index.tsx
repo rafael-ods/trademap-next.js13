@@ -139,7 +139,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="bg-gray-main-light py-9">
-        <div className="container flex items-center justify-between flex-wrap flex-row-reverse lg:flex-row">
+        <div className="container flex items-center justify-between flex-wrap flex-row-reverse lg:flex-row space-y-2 lg:space-y-0">
           <p className="paragraph text-gray-400 text-[13px] font-extralight">
             Uma marca do grupo Valemobi – 2024 © All Rights Reserved.
           </p>
