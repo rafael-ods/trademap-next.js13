@@ -196,7 +196,7 @@ export default function Header() {
                         className="flex items-center gap-16 uppercase text-green-main text-base font-light"
                       >
                         <img
-                          className="h-fit w-[20px]"
+                          className="!h-[20px] w-[20px]"
                           src="/assets/header/login.svg"
                           alt="login icon"
                         />
