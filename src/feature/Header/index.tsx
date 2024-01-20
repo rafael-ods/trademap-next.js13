@@ -9,10 +9,12 @@ import Button from '@/component/Button'
 import { MdOutlineClose } from 'react-icons/md'
 import { HiDownload } from 'react-icons/hi'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Header() {
   const path = usePathname()
   const [selected, setSelected] = useState(false)
+  const router = useRouter
 
   const linksheader = [
     {
@@ -83,11 +85,13 @@ export default function Header() {
       <div className="container py-3">
         <div className="flex items-center justify-between">
           <nav className="flex md:gap-6 lg:gap-9">
-            <img
-              className="w-[97px] h-auto lg:w-[128px]"
-              src="/assets/header/logo-trademap.svg"
-              alt="logo trademap"
-            />
+            <NextLink href="/">
+              <img
+                className="w-[97px] h-auto lg:w-[128px]"
+                src="/assets/header/logo-trademap.svg"
+                alt="logo trademap"
+              />
+            </NextLink>
             <ul className="hidden md:flex items-center md:gap-3 lg:gap-10 ">
               {linksheader.map((item) => {
                 const isActive = path === item.path
@@ -147,7 +151,7 @@ export default function Header() {
             >
               <div className="container pt-[10px]">
                 <div className="flex items-center">
-                  <NextLink href="/login">
+                  <NextLink href="/">
                     <img
                       className="w-[127.75px] h-auto lg:w-[128px]"
                       src="/assets/header/logo-trademap.svg"
@@ -179,12 +183,14 @@ export default function Header() {
                         ])}
                       >
                         <img src={item.src} alt={item.alt} />
-                        <NextLink href={item.path}>{item.title}</NextLink>
+                        <NextLink onClick={router} href={item.path}>
+                          {item.title}
+                        </NextLink>
                       </li>
                     )
                   })}
-                  <div className="mt-4 flex flex-col gap-7 w-[280px]">
-                    <Button colorMode="contrast">
+                  <div className="mt-4 space-y-11 w-[280px]">
+                    <Button colorMode="contrast" classProps="w-full">
                       <NextLink
                         href="#"
                         className="flex items-center gap-16 uppercase text-green-main text-base font-light"
@@ -197,7 +203,7 @@ export default function Header() {
                         Trademap Web
                       </NextLink>
                     </Button>
-                    <Button colorMode="main">
+                    <Button colorMode="main" classProps="w-full">
                       <NextLink
                         href="#"
                         className="flex items-center gap-12 uppercase text-base"

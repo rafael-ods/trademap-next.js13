@@ -3,12 +3,18 @@ import classMerge from '@/lib/utils/classMerge'
 type ButtonProps = {
   children: React.ReactNode
   colorMode: 'main' | 'contrast'
+  classProps?: React.CSSProperties | string
 }
 
-export default function Button({ children, colorMode }: ButtonProps) {
+export default function Button({
+  children,
+  colorMode,
+  classProps,
+}: ButtonProps) {
   return (
     <button
       className={classMerge([
+        `${classProps}`,
         'py-2',
         'px-[0.5rem]',
         'lg:px-4',
