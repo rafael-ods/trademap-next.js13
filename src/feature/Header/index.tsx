@@ -192,7 +192,7 @@ export default function Header() {
                   <div className="mt-4 space-y-11 w-[280px]">
                     <Button colorMode="contrast" classProps="w-full">
                       <NextLink
-                        href="#"
+                        href="/onboard/login"
                         className="flex items-center gap-16 uppercase text-green-main text-base font-light"
                       >
                         <img
@@ -205,7 +205,7 @@ export default function Header() {
                     </Button>
                     <Button colorMode="main" classProps="w-full">
                       <NextLink
-                        href="#"
+                        href="/onboard/login"
                         className="flex items-center gap-12 uppercase text-base"
                       >
                         <HiDownload size={18} />
@@ -257,7 +257,7 @@ export default function Header() {
             <div className="hidden md:flex items-centerS gap-2 lg:gap-8">
               <Button colorMode="contrast">
                 <NextLink
-                  href="#"
+                  href="/onboard/login"
                   className="flex items-center gap-2 justify-between"
                 >
                   <img
@@ -270,7 +270,7 @@ export default function Header() {
               </Button>
               <Button colorMode="main">
                 <NextLink
-                  href="#"
+                  href="/onboard/login"
                   className="flex items-center gap-2 justify-between"
                 >
                   <img src="/assets/header/user.svg" alt="login icon" />
