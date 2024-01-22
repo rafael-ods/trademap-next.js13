@@ -18,6 +18,7 @@ const config: Config = {
         'gray-main-icon': '#C6C6C6',
         'background-main-icon': '#182530',
         'gray-main-light': '#23242F',
+        'gray-main-login': '#13141B',
       },
       backgroundImage: {
         'green-main-gradient':
