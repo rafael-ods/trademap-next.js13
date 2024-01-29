@@ -3,8 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Providers from '../providers'
 import getPageTitle from '@/lib/utils/getPageTitle'
-import Header from '@/feature/Header'
-import Footer from '@/feature/Footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -42,9 +40,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${inter.className} bg-white-main-light`}>
         <Providers>
-          <Header />
           <main>{children}</main>
-          <Footer />
         </Providers>
       </body>
     </html>

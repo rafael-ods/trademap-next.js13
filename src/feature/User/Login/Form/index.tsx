@@ -6,15 +6,7 @@ import classMerge from '@/lib/utils/classMerge'
 export default function UserLoginForm() {
   return (
     <section
-      className={classMerge([
-        'grid',
-        'lg:grid-cols-12',
-        'min-h-screen',
-        'fixed',
-        'w-full',
-        'top-0',
-        'z-[9999999999]',
-      ])}
+      className={classMerge(['grid', 'lg:grid-cols-12', 'min-h-screen'])}
     >
       <div
         className={classMerge([

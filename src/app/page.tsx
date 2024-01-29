@@ -6,6 +6,7 @@ import HomeBroken from '@/feature/HomeBroken'
 import News from '@/feature/News'
 import getPageTitle from '@/lib/utils/getPageTitle'
 import { Metadata } from 'next'
+import Template from './templates'
 
 export const metadata: Metadata = {
   title: getPageTitle('Seus investimentos na melhor direção'),
@@ -14,12 +15,14 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
-      <CtaInformation />
-      <CtaTrademapCarrousel />
-      <CtaInformationUsers />
-      <HomeBroken />
-      <News />
+      <Template>
+        <Hero />
+        <CtaInformation />
+        <CtaTrademapCarrousel />
+        <CtaInformationUsers />
+        <HomeBroken />
+        <News />
+      </Template>
     </>
   )
 }
