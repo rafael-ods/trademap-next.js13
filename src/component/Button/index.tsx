@@ -4,15 +4,18 @@ type ButtonProps = {
   children: React.ReactNode
   colorMode: 'main' | 'contrast'
   classProps?: React.CSSProperties | string
+  onClick: () => void
 }
 
 export default function Button({
   children,
   colorMode,
   classProps,
+  onClick,
 }: ButtonProps) {
   return (
     <button
+      onClick={onClick}
       className={classMerge([
         `${classProps}`,
         'py-2',

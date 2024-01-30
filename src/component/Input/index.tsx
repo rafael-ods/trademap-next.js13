@@ -1,23 +1,15 @@
 'use client'
 import classMerge from '@/lib/utils/classMerge'
-import React, { useState } from 'react'
+import React, { InputHTMLAttributes, useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 type InputProps = {
   label?: string
-  required?: boolean
-  helptext?: string
-  placeholder?: string
+  helpText?: string
   type?: 'email' | 'text' | 'password'
-}
+} & InputHTMLAttributes<HTMLInputElement>
 
-export default function Input({
-  type,
-  label,
-  helptext,
-  placeholder,
-  required = false,
-}: InputProps) {
+export default function Input({ type, label, helpText, ...props }: InputProps) {
   const [inputType, setInputType] = useState(type)
 
   const handleTogglePassword = () => {
@@ -37,6 +29,7 @@ export default function Input({
         </label>
 
         <input
+          {...props}
           className={classMerge([
             'py-4 ',
             'pr-10 ',
@@ -49,11 +42,13 @@ export default function Input({
             'text-white-main ',
             'border-[#353546] ',
             'focus:border-green-main',
+            {
+              'border-[#D30D48]': helpText,
+              'focus:border-[#D30D48]': helpText,
+            },
           ])}
           id={label}
           type={inputType}
-          required={required}
-          placeholder={placeholder}
         />
         {type === 'password' && (
           <button
@@ -62,14 +57,14 @@ export default function Input({
             className="absolute top-[40px] right-5"
           >
             {inputType === 'password' ? (
-              <FaEye size={22} color="#C6C6C6" />
+              <FaEye size={22} color={helpText ? '#D30D48' : '#C6C6C6'} />
             ) : (
-              <FaEyeSlash size={22} color="#C6C6C6" />
+              <FaEyeSlash size={22} color={helpText ? '#D30D48' : '#C6C6C6'} />
             )}
           </button>
         )}
       </div>
-      <p>{helptext}</p>
+      <p className="text-[#D30D48] font-medium text-xs mt-2">{helpText}</p>
     </div>
   )
 }
