@@ -4,14 +4,14 @@ const config: Config = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
 
-    // './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    // './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        'green-main': '#00FFC4;',
-        'green-main-hover': '#00AF78;',
+        'green-main': '#00FFC4',
+        'green-main-hover': '#00AF78',
         'white-main': '#F9FAFF',
         'white-main-light': '#FFF',
         'gray-main': '#1A1B23',
@@ -22,7 +22,7 @@ const config: Config = {
       },
       backgroundImage: {
         'green-main-gradient':
-          'linear-gradient(184deg, #00FFC4  0%, #02C989 100%);',
+          'linear-gradient(184deg, #00FFC4  0%, #02C989 100%)',
         'green-main-gradient-hover':
           'linear-gradient(180deg, #2FFDCE 0%, #00FFC4  100%)',
         'footer-background': 'url("/assets/footer/bg-footer.png")',

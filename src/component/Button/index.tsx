@@ -4,7 +4,7 @@ type ButtonProps = {
   children: React.ReactNode
   colorMode: 'main' | 'contrast'
   classProps?: React.CSSProperties | string
-  onClick: () => void
+  onClick?: () => void
 }
 
 export default function Button({
