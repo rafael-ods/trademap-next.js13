@@ -22,7 +22,7 @@ export default function UserProfile() {
       message.success('Logout realizado com sucesso!', 5000)
     } catch (error) {
       message.error(
-        'Ocorreu um erro ao realizar a requisição. Tente novamente!',
+        'Ocorreu um erro ao realizar a requisição. Tente novamente!!',
       )
     } finally {
       progress.done()
