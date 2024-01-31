@@ -1,9 +1,8 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
-// import getCurrentUser from '../../user/getCurrentUser'
-// import getUserMe from '../../user/getUserMe'
 import { GetAuthConfigResponse } from './schema'
 import createLogin from '../../User/createLogin'
-import UserData from '../../User/userData'
+import getUserMe from '../../User/getUserMe'
+import getCurrentUser from '../../User/getCurrentUser'
 
 export default function getAuthConfig(): GetAuthConfigResponse {
   return {
@@ -26,7 +25,7 @@ export default function getAuthConfig(): GetAuthConfigResponse {
               throw userData
             }
             if (login.ok) {
-              const user = await UserData(userData.token)
+              const user = await getUserMe(userData.token)
               if (user) return { ...user, token: userData.token }
             }
             return login
@@ -38,14 +37,13 @@ export default function getAuthConfig(): GetAuthConfigResponse {
       CredentialsProvider({
         id: 'refresh-user',
         name: 'refresh-user',
-        credentials: {
-          token: { label: 'token', type: 'text', value: '' },
-        },
-        async authorize(credentials) {
+        credentials: {},
+        async authorize() {
           try {
-            const me = await UserData(credentials?.token || '')
-            console.log(me)
-            if (me) return { ...me, token: credentials?.token }
+            const user = await getCurrentUser()
+            const me = await getUserMe({ token: user?.token || '' })
+            console.log(user, me)
+            if (me) return me
             return null
           } catch (error) {
             return null

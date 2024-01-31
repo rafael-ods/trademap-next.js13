@@ -11,14 +11,9 @@ import {
 import classMerge from '@/lib/utils/classMerge'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { signIn, useSession } from 'next-auth/react'
-import { redirect } from 'next/navigation'
+import { signIn } from 'next-auth/react'
 
 export default function UserLoginForm() {
-  const { data } = useSession()
-
-  if (data) redirect('/onboard/perfil')
-
   const progress = useProgressBar()
   const message = useMessage()
 

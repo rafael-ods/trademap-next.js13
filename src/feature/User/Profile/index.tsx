@@ -1,15 +1,19 @@
 'use client'
 
+import Template from '@/app/templates'
 import Button from '@/component/Button'
 import useMessage from '@/lib/hooks/useMessage'
 import useProgressBar from '@/lib/hooks/useProgressBar'
-import { signOut, useSession } from 'next-auth/react'
+import { User } from 'next-auth'
+import { signOut } from 'next-auth/react'
 
-export default function UserProfile() {
+type UserProfileProps = {
+  user: User | undefined
+}
+
+export default function UserProfile({ user }: UserProfileProps) {
   const progress = useProgressBar()
   const message = useMessage()
-
-  const { data } = useSession()
 
   const handleExit = async () => {
     try {
@@ -29,15 +33,17 @@ export default function UserProfile() {
     }
   }
   return (
-    <section className="min-h-screen flex flex-col gap-6 items-center justify-center bg-gray-main">
-      <div className="text-white text-4xl text-center">{`Olá ${data?.user?.name} ${data?.user?.lastName} seja bem vindo!`}</div>
-      <Button
-        onClick={handleExit}
-        colorMode="contrast"
-        classProps={'w-[300px] !text-2xl'}
-      >
-        Sair
-      </Button>
-    </section>
+    <Template>
+      <section className="min-h-screen flex flex-col gap-6 items-center justify-center bg-gray-main-login">
+        <div className="text-white text-4xl text-center">{`Olá ${user?.name}  seja bem vindo!`}</div>
+        <Button
+          onClick={handleExit}
+          colorMode="contrast"
+          classProps={'w-[300px] !text-2xl'}
+        >
+          Sair
+        </Button>
+      </section>
+    </Template>
   )
 }

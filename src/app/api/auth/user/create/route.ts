@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
-  // Simula um login bem-sucedido
   const { email, password } = await req.json()
 
-  if (email === 'admin@gmail.com' && password === '0123456789@Aa') {
+  // Simula um login bem-sucedido
+  if (email === 'admin@gmail.com' && password === '0123456789') {
     return NextResponse.json({
       success: true,
       message: 'Login bem-sucedido',

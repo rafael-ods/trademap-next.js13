@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Providers from '../providers'
 import getPageTitle from '@/lib/utils/getPageTitle'
-import NextAuthSessionProvider from '@/providers/sessionProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -40,11 +39,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.className} bg-white-main-light`}>
-        <NextAuthSessionProvider>
-          <Providers>
-            <main>{children}</main>
-          </Providers>
-        </NextAuthSessionProvider>
+        <Providers>
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   )
