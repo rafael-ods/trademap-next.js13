@@ -30,7 +30,7 @@ export default function UserProfile() {
   }
   return (
     <section className="min-h-screen flex flex-col gap-6 items-center justify-center bg-gray-main">
-      <div className="text-white text-4xl">{`Olá ${data?.user?.name} ${data?.user?.lastName} seja bem vindo!`}</div>
+      <div className="text-white text-4xl text-center">{`Olá ${data?.user?.name} ${data?.user?.lastName} seja bem vindo!`}</div>
       <Button
         onClick={handleExit}
         colorMode="contrast"
