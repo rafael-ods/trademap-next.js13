@@ -1,4 +1,4 @@
-import UserLoginForm from '@/feature/User/Create/Login/Form'
+import UserLoginForm from '@/feature/User/Login/Form'
 import getCurrentUser from '@/lib/services/User/getCurrentUser'
 import getPageTitle from '@/lib/utils/getPageTitle'
 import { Metadata } from 'next'

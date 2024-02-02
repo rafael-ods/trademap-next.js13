@@ -142,7 +142,7 @@ export default function UserLoginForm() {
             Entrar na minha conta
           </button>
           <a
-            href="#"
+            href="/onboard/cadastro"
             className="p-2 text-center rounded-lg text-[#36D698] font-medium hover:underline border-2 border-[#36D698]"
           >
             Criar uma conta
