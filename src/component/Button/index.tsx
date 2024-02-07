@@ -5,16 +5,18 @@ type ButtonProps = {
   colorMode: 'main' | 'contrast'
   classProps?: React.CSSProperties | string
   onClick?: () => void
-}
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export default function Button({
   children,
   colorMode,
   classProps,
   onClick,
+  ...props
 }: ButtonProps) {
   return (
     <button
+      {...props}
       onClick={onClick}
       className={classMerge([
         `${classProps}`,

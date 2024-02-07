@@ -38,3 +38,11 @@
     transform: scale(1);
   }
 }
+
+@layer base {
+  #nprogress {
+    @apply [&_.bar]:!bg-green-main-gradient [&_.bar]:!h-[5px];
+    @apply [&_.bar_>_.peg]:!shadow-md [&_.bar_>_.peg]:!h-[5px];
+    @apply [&_.spinner]:!hidden;
+  }
+}

@@ -7,9 +7,16 @@ type InputProps = {
   label?: string
   helpText?: string
   type?: 'email' | 'text' | 'password'
+  inputRef?: React.Ref<HTMLInputElement>
 } & InputHTMLAttributes<HTMLInputElement>
 
-export default function Input({ type, label, helpText, ...props }: InputProps) {
+export default function Input({
+  type,
+  label,
+  helpText,
+  inputRef,
+  ...props
+}: InputProps) {
   const [inputType, setInputType] = useState(type)
 
   const handleTogglePassword = () => {
@@ -29,6 +36,7 @@ export default function Input({ type, label, helpText, ...props }: InputProps) {
         </label>
 
         <input
+          ref={inputRef}
           {...props}
           className={classMerge([
             'py-4 ',

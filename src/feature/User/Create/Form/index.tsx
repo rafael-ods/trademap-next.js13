@@ -12,28 +12,27 @@ import getStateList from '@/lib/services/state/getStateList'
 import { GetAddressByCodeResponse } from '@/lib/services/zipCode/getAddressByCode/schema'
 import CustomError from '@/lib/utils/CustomError'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useSearchParams } from 'next/navigation'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 
 export default function UserCreateForm() {
   const progress = useProgressBar()
   const message = useMessage()
-  const params = useSearchParams()
 
   const form = useForm<CreateUserPayload>({
     resolver: zodResolver(createUserSchema),
     defaultValues: {
-      name: String(params.get('name') || ''),
-      lastName: String(params.get('lastName') || ''),
-      email: String(params.get('email') || ''),
+      // name: String(params.get('name') || ''),
+      // lastName: String(params.get('lastName') || ''),
+      // email: String(params.get('email') || ''),
     },
   })
 
   const handleSubmit: SubmitHandler<CreateUserPayload> = async (data) => {
     try {
+      console.log(data)
       progress.start()
 
-      const response = await fetch('/api/user/create', {
+      const response = await fetch('/app/api/auth/user/create-user', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -41,31 +40,31 @@ export default function UserCreateForm() {
         },
         body: JSON.stringify({
           ...data,
-          utmSource: String(localStorage.getItem('utm_source') || ''),
-          utmMedium: String(localStorage.getItem('utm_medium') || ''),
-          utmCampaign: String(localStorage.getItem('utm_campaign') || ''),
-          utmTerm: String(localStorage.getItem('utm_term') || ''),
-          utmContent: String(localStorage.getItem('utm_content') || ''),
+          // utmSource: String(localStorage.getItem('utm_source') || ''),
+          // utmMedium: String(localStorage.getItem('utm_medium') || ''),
+          // utmCampaign: String(localStorage.getItem('utm_campaign') || ''),
+          // utmTerm: String(localStorage.getItem('utm_term') || ''),
+          // utmContent: String(localStorage.getItem('utm_content') || ''),
         }),
         cache: 'no-store',
       })
 
-      if (response.ok) {
-        message.success('Cadastro realizado com sucesso!')
+      // if (response.ok) {
+      //   message.success('Cadastro realizado com sucesso!')
 
-        localStorage.removeItem('utm_source')
-        localStorage.removeItem('utm_medium')
-        localStorage.removeItem('utm_campaign')
-        localStorage.removeItem('utm_term')
-        localStorage.removeItem('utm_content')
-        // setTimeout(() => {
-        //   window.location.href = `/cadastro/sucesso?email=${data.email}`
-        // }, 2000)
-        setTimeout(() => {
-          window.location.href = `/login`
-        }, 2000)
-        return
-      }
+      //   localStorage.removeItem('utm_source')
+      //   localStorage.removeItem('utm_medium')
+      //   localStorage.removeItem('utm_campaign')
+      //   localStorage.removeItem('utm_term')
+      //   localStorage.removeItem('utm_content')
+      //   // setTimeout(() => {
+      //   //   window.location.href = `/cadastro/sucesso?email=${data.email}`
+      //   // }, 2000)
+      //   setTimeout(() => {
+      //     window.location.href = `/login`
+      //   }, 2000)
+      //   return
+      // }
 
       const error = await response.json()
       throw new CustomError(error)
@@ -119,6 +118,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   label="E-mail *"
                   placeholder="E-mail"
                   helpText={fieldState.error?.message}
@@ -131,6 +131,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   type="password"
                   label="Senha *"
                   placeholder="senha forte"
@@ -144,6 +145,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   type="password"
                   label="Confirmar Senha *"
                   placeholder="repetir senha forte"
@@ -157,6 +159,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   label="Nome *"
                   placeholder="seu nome"
                   helpText={fieldState.error?.message}
@@ -169,6 +172,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   label="Sobrenome *"
                   placeholder="seu sobrenome"
                   helpText={fieldState.error?.message}
@@ -242,6 +246,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   label="Cidade *"
                   placeholder="sua cidade"
                   helpText={fieldState.error?.message}
@@ -254,6 +259,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   label="Bairro *"
                   placeholder="seu bairro"
                   helpText={fieldState.error?.message}
@@ -266,6 +272,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   label="Logradouro *"
                   placeholder="Rua, avenida, estrada..."
                   helpText={fieldState.error?.message}
@@ -278,6 +285,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   label="Número *"
                   placeholder="000"
                   helpText={fieldState.error?.message}
@@ -290,6 +298,7 @@ export default function UserCreateForm() {
               render={({ field, fieldState }) => (
                 <Input
                   {...field}
+                  inputRef={field.ref}
                   label="Complemento"
                   placeholder="se houver"
                   helpText={fieldState.error?.message}
@@ -300,7 +309,11 @@ export default function UserCreateForm() {
         </div>
 
         <div data-aos="fade-up" data-aos-delay={700}>
-          <Button classProps={'w-full !py-3 mt-10'} colorMode="contrast">
+          <Button
+            type="submit"
+            classProps={'w-full !py-3 mt-10'}
+            colorMode="contrast"
+          >
             Cadastrar
           </Button>
         </div>
