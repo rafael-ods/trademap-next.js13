@@ -10,6 +10,7 @@ import { MdOutlineClose } from 'react-icons/md'
 import { HiDownload } from 'react-icons/hi'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import LogoTradeMap from '@/component/LogoTradeMap'
 
 export default function Header() {
   const path = usePathname()
@@ -25,7 +26,7 @@ export default function Header() {
     {
       id: 0,
       title: 'Planos',
-      path: '#',
+      path: '/plano',
     },
     {
       id: 0,
@@ -47,7 +48,7 @@ export default function Header() {
     {
       id: 1,
       title: 'Planos',
-      path: '#',
+      path: '/plano',
     },
     {
       id: 2,
@@ -85,13 +86,11 @@ export default function Header() {
       <div className="container py-3">
         <div className="flex items-center justify-between">
           <nav className="flex md:gap-6 lg:gap-9">
-            <NextLink href="/">
-              <img
-                className="w-[97px] h-auto lg:w-[128px]"
-                src="/assets/header/logo-trademap.svg"
-                alt="logo trademap"
-              />
-            </NextLink>
+            <LogoTradeMap
+              classProps={'w-[97px] h-auto lg:w-[128px]'}
+              href="/"
+              src="/assets/header/logo-trademap.svg"
+            />
             <ul className="hidden md:flex items-center md:gap-3 lg:gap-10 ">
               {linksheader.map((item) => {
                 const isActive = path === item.path
