@@ -46,3 +46,7 @@
     @apply [&_.spinner]:!hidden;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
