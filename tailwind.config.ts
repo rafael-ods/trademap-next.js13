@@ -30,6 +30,10 @@ const config: Config = {
         'header-bg-gradient':
           'linear-gradient(180deg, #13141B 0%, #23242F 100%)',
         'header-bg': 'url("/assets/header/header-bg-mobile.webp")',
+        'btn-gradient-plan-pro':
+          'linear-gradient(240deg, #01E59B 50%,  #00FFC4 100%)',
+        'btn-gradient-plan-pro-hover':
+          'linear-gradient(180deg, #01E59B 0%, #00FFC4 100%);',
       },
       boxShadow: {
         'green-main-boxShadow':

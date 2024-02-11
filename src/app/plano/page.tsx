@@ -1,5 +1,6 @@
 import HeroPlan from '@/feature/PlanPage/Hero'
-import Subscriptions from '@/feature/PlanPage/Hero/Subscriptions'
+import PlanPro from '@/feature/PlanPage/PlanPro'
+import Subscriptions from '@/feature/PlanPage/Subscriptions'
 import getPageTitle from '@/lib/utils/getPageTitle'
 import { Metadata } from 'next'
 
@@ -12,6 +13,7 @@ export default function Page() {
     <>
       <HeroPlan />
       <Subscriptions />
+      <PlanPro />
     </>
   )
 }
