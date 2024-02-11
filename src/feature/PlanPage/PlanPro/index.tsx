@@ -57,7 +57,7 @@ export default function PlanPro() {
             ])}
           />
           <img
-            className="h-full"
+            className="h-auto max-w-full"
             data-aos="fade-right"
             src="/assets/plan/plan-pro/mac-trade-map.png"
             alt="mac tela trademap"
