@@ -34,6 +34,7 @@ const config: Config = {
           'linear-gradient(240deg, #01E59B 50%,  #00FFC4 100%)',
         'btn-gradient-plan-pro-hover':
           'linear-gradient(180deg, #01E59B 0%, #00FFC4 100%);',
+        'footer-plan-bg': 'url("/assets/plan/footer-plan/footer-plan-bg.jpeg")',
       },
       boxShadow: {
         'green-main-boxShadow':

@@ -49,7 +49,7 @@ export default function PlanPro() {
               'lg:w-[500px] ',
               'rounded-full ',
               'bg-opacity-25 ',
-              '-right-[150px] ',
+              '-right-[110px] ',
               'lg:-right-[200px] ',
               '-translate-x-1/2 ',
               '-translate-y-1/2 ',

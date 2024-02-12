@@ -1,3 +1,4 @@
+import FooterPlan from '@/feature/PlanPage/FooterPlan'
 import HeroPlan from '@/feature/PlanPage/Hero'
 import PlanFree from '@/feature/PlanPage/PlanFree'
 import PlanPro from '@/feature/PlanPage/PlanPro'
@@ -18,6 +19,7 @@ export default function Page() {
       <PlanPro />
       <PlanFree />
       <TalkAbout />
+      <FooterPlan />
     </>
   )
 }
