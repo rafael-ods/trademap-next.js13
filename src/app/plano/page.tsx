@@ -2,6 +2,7 @@ import HeroPlan from '@/feature/PlanPage/Hero'
 import PlanFree from '@/feature/PlanPage/PlanFree'
 import PlanPro from '@/feature/PlanPage/PlanPro'
 import Subscriptions from '@/feature/PlanPage/Subscriptions'
+import TalkAbout from '@/feature/PlanPage/TalkAbout'
 import getPageTitle from '@/lib/utils/getPageTitle'
 import { Metadata } from 'next'
 
@@ -16,6 +17,7 @@ export default function Page() {
       <Subscriptions />
       <PlanPro />
       <PlanFree />
+      <TalkAbout />
     </>
   )
 }
