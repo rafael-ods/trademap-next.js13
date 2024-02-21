@@ -36,7 +36,7 @@ export default function Header() {
     {
       id: 0,
       title: 'FAQ',
-      path: '#',
+      path: '/faq',
     },
   ]
   const linksheaderMobile = [
@@ -58,7 +58,7 @@ export default function Header() {
     {
       id: 3,
       title: 'FAQ',
-      path: '#',
+      path: '/faq',
     },
     {
       id: 4,
