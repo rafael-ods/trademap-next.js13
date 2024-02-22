@@ -31,12 +31,19 @@ export default function NotFound() {
 
   return (
     <section className="container grid lg:grid-cols-12 py-8 lg:py-36 gap-11 lg:gap-0">
-      <div className="lg:col-span-6 flex flex-col items-center justify-center">
+      <div
+        data-aos="fade-up"
+        className="lg:col-span-6 flex flex-col items-center justify-center"
+      >
         <span className="text-[#D6D6D6] text-[135px] font-bold">404</span>
         <p className="font-bold text-[53px]">Ooops.</p>
         <p className="text-2xl font-bold">Página não encontrada</p>
       </div>
-      <div className="lg:col-span-6 flex flex-col gap-4 justify-center w-full lg:max-w-[478px]">
+      <div
+        data-aos="fade-up"
+        data-aos-delay={400}
+        className="lg:col-span-6 flex flex-col gap-4 justify-center w-full lg:max-w-[478px]"
+      >
         <p className="text-sm text-gray-400 text-center lg:text-start">
           Conteúdo não encontrado. Efetue uma pesquisa:
         </p>

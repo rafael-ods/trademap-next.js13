@@ -31,7 +31,7 @@ export default function Header() {
     {
       id: 0,
       title: 'Notícias',
-      path: '#',
+      path: '/404',
     },
     {
       id: 0,
@@ -53,7 +53,7 @@ export default function Header() {
     {
       id: 2,
       title: 'Notícias',
-      path: '#',
+      path: '/404',
     },
     {
       id: 3,
