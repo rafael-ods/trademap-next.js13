@@ -5,7 +5,7 @@ import NextLink from 'next/link'
 type LogoTradeMapProps = {
   href: string
   src: string
-  classProps: React.CSSProperties | string
+  classProps?: React.CSSProperties | string
 }
 
 export default function LogoTradeMap({

@@ -63,7 +63,7 @@ export default function Header() {
     {
       id: 4,
       title: 'Ligas',
-      path: '#',
+      path: '/onboard/login',
       src: '/assets/header/shield-mobile.svg',
       alt: 'icon shield',
     },
