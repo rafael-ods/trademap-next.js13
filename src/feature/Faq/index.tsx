@@ -164,7 +164,7 @@ export default function Faq() {
             <input
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
-              className="w-full pl-10 text-sm text-gray-500 rounded-3xl focus:ring-green-main"
+              className="w-full pl-10 text-sm text-gray-500 rounded-3xl focus:ring-0 focus:border-green-main"
               type="text"
             />
             <FaSearch className="absolute top-1/3 left-4" color="#a09f9f" />
@@ -178,7 +178,7 @@ export default function Faq() {
               <li
                 key={item.title}
                 data-aos="fade-up"
-                data-aos-delay={(index + 1) * 100 + 400}
+                data-aos-delay={(index + 1) * 100 + 300}
                 className={classMerge([
                   'md:col-span-6',
                   'xl:col-span-4',
