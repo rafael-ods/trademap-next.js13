@@ -31,7 +31,7 @@ export default function Header() {
     {
       id: 0,
       title: 'Notícias',
-      path: '/404',
+      path: '/noticias',
     },
     {
       id: 0,
@@ -53,7 +53,7 @@ export default function Header() {
     {
       id: 2,
       title: 'Notícias',
-      path: '/404',
+      path: '/noticias',
     },
     {
       id: 3,
@@ -76,11 +76,29 @@ export default function Header() {
     },
   ]
 
+  const navList = [
+    {
+      path: '#',
+      title: 'TradeCast',
+      src: '/assets/nav-icon-header/listen.svg',
+    },
+    {
+      path: '#',
+      title: 'Liga',
+      src: '/assets/nav-icon-header/shield.svg',
+    },
+    {
+      path: '#',
+      title: 'Educa',
+      src: '/assets/nav-icon-header/flag.svg',
+    },
+  ]
+
   return (
     <header className="bg-gray-main-light">
       <div className="bg-gray-main">
         <div className="container">
-          <NavRow />
+          <NavRow links={navList} />
         </div>
       </div>
       <div className="container py-3">
