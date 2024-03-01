@@ -1,4 +1,5 @@
 import HeaderNews from '@/feature/NewPage/Hero'
+import News from '@/feature/NewPage/News'
 import getPageTitle from '@/lib/utils/getPageTitle'
 import { Metadata } from 'next'
 import React from 'react'
@@ -11,6 +12,7 @@ export default function Page() {
   return (
     <>
       <HeaderNews />
+      <News />
     </>
   )
 }
