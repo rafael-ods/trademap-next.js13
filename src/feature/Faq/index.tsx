@@ -3,10 +3,10 @@ import LogoTradeMap from '@/component/LogoTradeMap'
 import classMerge from '@/lib/utils/classMerge'
 import NextLink from 'next/link'
 import { useState } from 'react'
-import { FaSearch, FaTimes } from 'react-icons/fa'
 import { FaBars } from 'react-icons/fa6'
 import CardFaq from './CardFaq'
 import { MdOutlineClose } from 'react-icons/md'
+import InputSearch from '@/component/Input/InputSearch'
 
 const listLink = [
   {
@@ -70,12 +70,7 @@ const faqList = [
 ]
 
 export default function Faq() {
-  const [searchValue, setSearchValue] = useState('')
   const [selected, setSelected] = useState(false)
-
-  const handleClearClick = () => {
-    setSearchValue('')
-  }
 
   return (
     <section>
@@ -153,21 +148,12 @@ export default function Faq() {
       </header>
       <div className="bg-faq-bg bg-cover bg-center h-[300px] ">
         <div className="container flex items-center justify-center h-full">
-          <div className="relative w-full lg:max-w-[600px]">
-            {searchValue.length > 0 && (
-              <FaTimes
-                className="absolute top-1/3 right-4 !cursor-pointer"
-                color="#a09f9f"
-                onClick={handleClearClick}
-              />
-            )}
-            <input
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-              className="w-full pl-10 text-sm text-gray-500 rounded-3xl focus:ring-0 focus:border-green-main"
-              type="text"
+          <div className=" w-full lg:max-w-[600px]">
+            <InputSearch
+              classProps={
+                'w-full pl-10 text-sm text-gray-500 rounded-3xl focus:ring-0 focus:border-green-main'
+              }
             />
-            <FaSearch className="absolute top-1/3 left-4" color="#a09f9f" />
           </div>
         </div>
       </div>

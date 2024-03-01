@@ -1,7 +1,6 @@
 'use client'
+import InputSearch from '@/component/Input/InputSearch'
 import NextLink from 'next/link'
-import { useState } from 'react'
-import { FaSearch, FaTimes } from 'react-icons/fa'
 
 const listNotFound = [
   {
@@ -23,12 +22,6 @@ const listNotFound = [
 ]
 
 export default function NotFound() {
-  const [searchValue, setSearchValue] = useState('')
-
-  const handleClearClick = () => {
-    setSearchValue('')
-  }
-
   return (
     <section className="container grid lg:grid-cols-12 py-8 lg:py-36 gap-11 lg:gap-0">
       <div
@@ -47,21 +40,12 @@ export default function NotFound() {
         <p className="text-sm text-gray-400 text-center lg:text-start">
           Conteúdo não encontrado. Efetue uma pesquisa:
         </p>
-        <form className="relative">
-          {searchValue.length > 0 && (
-            <FaTimes
-              className="absolute top-1/3 right-4 !cursor-pointer"
-              color="#a09f9f"
-              onClick={handleClearClick}
-            />
-          )}
-          <input
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            className="bg-gray-100 border-none text-sm focus:ring-2 focus:ring-black px-10 py-4 w-full"
-            type="text"
+        <form>
+          <InputSearch
+            classProps={
+              'bg-gray-100 border-none text-sm focus:ring-2 focus:ring-black px-10 py-4 w-full'
+            }
           />
-          <FaSearch className="absolute top-1/3 left-4" color="#a09f9f" />
         </form>
         <div className="h-1 bg-gray-200 w-[70px]" />
         <div>
