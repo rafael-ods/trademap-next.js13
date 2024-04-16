@@ -37,7 +37,7 @@ export default function News() {
   return (
     <section className="container py-10">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-20 md:gap-14">
-        <div className="md:col-span-6">
+        <div data-aos="fade-up" className="md:col-span-6">
           <CarrouselNewsPage>
             <div>
               <img
@@ -65,15 +65,14 @@ export default function News() {
         </div>
         <div className="md:col-span-6">
           <ul className="grid md:grid-cols-2 gap-5">
-            {listNews.map((item) => {
+            {listNews.map((item, index) => {
               return (
-                <li key={item.title}>
-                  <CardNewsMain
-                    src={item.src}
-                    link={item.link}
-                    title={item.title}
-                    description={item.description}
-                  />
+                <li
+                  data-aos="fade-up"
+                  data-aos-delay={(index + 1) * 100 + 500}
+                  key={item.title}
+                >
+                  <CardNewsMain {...item} />
                 </li>
               )
             })}

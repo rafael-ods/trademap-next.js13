@@ -1,4 +1,5 @@
 import HeaderNews from '@/feature/NewPage/Hero'
+import Marketplace from '@/feature/NewPage/Marketplace'
 import News from '@/feature/NewPage/News'
 import getPageTitle from '@/lib/utils/getPageTitle'
 import { Metadata } from 'next'
@@ -13,6 +14,7 @@ export default function Page() {
     <>
       <HeaderNews />
       <News />
+      <Marketplace />
     </>
   )
 }
